@@ -1,0 +1,206 @@
+
+.detail-container {
+    display: flex;
+    justify-content: center;
+    padding: 60px 40px;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.product-images {
+    flex: 1;
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 20px;
+}
+
+.main-model-image {
+    width: 100%;
+    height: 350px; 
+    object-fit: cover; 
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.product-close-up-image {
+    width: 100%;
+    height: 350px; 
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.product-info {
+    flex: 1;
+    padding-top: 20px;
+    text-align: left;
+}
+
+.product-info h1 {
+    color: #008080;
+    font-weight: 900;
+    margin-bottom: 20px;
+}
+
+.product-description {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+}
+
+.price-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.price-section span {
+    font-size: 18px;
+    font-weight: 500;
+    color: #333;
+    margin-right: 15px;
+}
+
+.final-price {
+    font-size: 30px;
+    font-weight: 900;
+    color: rgba(255, 102, 0, 0.918);
+}
+
+.size-selection label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+.size-options {
+    margin-bottom: 40px;
+}
+
+.size-btn {
+    padding: 10px 15px;
+    margin-right: 10px;
+    border: 2px solid #ddd;
+    background-color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.size-btn:hover, .size-btn.active {
+    background-color: #008080;
+    color: white;
+    border-color: #008080;
+}
+
+/* زر الطلب */
+.order-now-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: rgba(255, 102, 0, 0.918);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    box-shadow: 0 4px 10px rgba(255, 102, 0, 0.4);
+}
+
+.order-now-btn:hover {
+    background-color: #ff8c00;
+}
+
+.extra-info {
+    margin-top: 30px;
+    font-size: 14px;
+    color: #777;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .detail-container {
+        flex-direction: column;
+        padding: 30px 20px;
+    }
+    .product-images {
+        grid-template-columns: 1fr; 
+        gap: 10px;
+    }
+    .main-model-image, .product-close-up-image {
+        height: 300px; 
+    }
+}
+/* في ملف product-detail.css */
+
+/* ------------------ تنسيق محدد الكمية ------------------ */
+
+.quantity-selector {
+    display: flex;
+    align-items: center;
+    margin: 20px 0 30px 0; /* مسافة إضافية أسفل محدد الكمية */
+    font-size: 16px;
+}
+
+.quantity-selector label {
+    margin-right: 15px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* تنسيق أزرار الزيادة والنقصان */
+.qty-btn {
+    background-color: #eee;
+    border: 1px solid #ccc;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 18px;
+    transition: background-color 0.2s;
+}
+.qty-btn:hover {
+    background-color: #ddd;
+}
+
+/* تنسيق حقل الإدخال */
+.qty-input {
+    width: 50px;
+    text-align: center;
+    border: 1px solid #ccc;
+    margin: 0 5px;
+    padding: 8px;
+    font-size: 16px;
+}
+/* إخفاء أسهم الأرقام التلقائية في المتصفحات */
+.qty-input::-webkit-outer-spin-button,
+.qty-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* ------------------ تنسيق زر الإضافة للعربة ------------------ */
+
+/* استبدال تنسيق .order-now-btn بـ .add-to-cart-btn */
+.add-to-cart-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #ff6600; /* اللون البرتقالي الجذاب */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 18px;
+    /* margin-top: 30px; تم إلغاؤه لأننا أضفنا مسافة في quantity-selector */
+    transition: background-color 0.3s;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #e65c00;
+}
+
+/* ملاحظة: قد تحتاج لحذف تنسيق .order-now-btn القديم من product-detail.css إذا كان موجوداً */

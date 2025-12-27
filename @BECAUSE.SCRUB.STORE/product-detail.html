@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - Scrub Set</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="product-detail.css" /> 
+</head>
+
+<body>
+    <div class="header">
+        <img class="logo" src="images/logo2.png" alt="Store Logo" />
+        <div class="header-links">
+    <a href="text.html">Home</a>
+    <a href="ourshop.html">Our Shop</a>
+    <a href="contact.html">Contact</a>
+    <a href="about.html">About</a>
+    
+    <a href="cart.html" class="cart-icon-link">
+        <span class="cart-icon">🛒</span>
+        <span class="cart-count">0</span>
+    </a>
+
+    <a href="signin.html"><button class="btn">Sign In</button></a>
+</div>
+    </div>
+
+    <div class="detail-container">
+        
+        <div class="product-images">
+            <img src="images/a2.jpg" alt="Black Scrub Model" class="main-model-image">
+            <img src="images/a.jpg" alt="Black Scrub Product" class="product-close-up-image">
+        </div>
+
+        <div class="product-info">
+            <h1>Premium Scrub Set - Black</h1>
+            
+            <p class="product-description">
+                Elevate your professional look with our Premium Black Scrub Set. Crafted from a high-quality, wrinkle-resistant fabric with exceptional four-way stretch. Designed for maximum comfort and durability during long shifts. Features three useful pockets.
+            </p>
+
+            <div class="price-section">
+                <span>Price:</span>
+                <p class="final-price">19.99 KWD</p>
+            </div>
+
+            <div class="size-selection">
+                <label>Select Size:</label>
+                <div class="size-options">
+                    <button class="size-btn active">S (Small)</button>
+                    <button class="size-btn">M (Medium)</button>
+                    <button class="size-btn">L (Large)</button>
+                    <button class="size-btn">XL (Extra Large)</button>
+                </div>
+            </div>
+            
+            <div class="quantity-selector">
+                <label for="quantity">Quantity:</label>
+                <button class="qty-btn minus-btn">-</button>
+                <input type="number" id="quantity" value="1" min="1" max="10" class="qty-input">
+                <button class="qty-btn plus-btn">+</button>
+            </div>
+            
+            <button class="add-to-cart-btn" id="addToCartButton">ADD TO CART</button>
+
+            <div class="extra-info">
+                <p>Delivery time: 2-4 working days. | Free exchange/return.</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        const productData = {
+            'black': {
+                name: 'Premium Scrub Set - Black',
+                price: 14.99, 
+                desc: 'Elevate your professional look with our Premium Black Scrub Set. Crafted from a high-quality, wrinkle-resistant fabric with exceptional four-way stretch. Designed for maximum comfort and durability during long shifts. Features three useful pockets.',
+                image_model: 'images/a2.jpg',
+                image_product: 'images/a.jpg'
+            },
+            'navy': {
+                name: 'Luxury Scrub Set - Navy Blue',
+                price: 14.99,
+                desc: 'The ideal color for doctors and supervisors. Made from durable and breathable material for all-day wear. Enjoy ultimate flexibility and comfort.',
+                image_model: 'images/b2.jpg',
+                image_product: 'images/b.jpg'
+            },
+            'gray': {
+                name: 'Soft Scrub Set - Gray',
+                price: 16.99,
+                desc: 'Modern color, soft feel, and flexible movement. Provides excellent comfort and a sleek appearance. Easy to care for and retains its shape.',
+                image_model: 'images/c2.jpg',
+                image_product: 'images/c.jpg'
+            },
+            'royal': {
+                name: 'Vibrant Scrub Set - Royal Blue',
+                price: 19.99,
+                desc: 'Bold color, durable fabric, perfect for long shifts. Maintains color and shape after multiple washes. Stand out with this energetic shade.',
+                image_model: 'images/d2.jpg',
+                image_product: 'images/d.jpg'
+            },
+            'teal': {
+                name: 'Essential Scrub Set - Teal',
+                price: 13.99,
+                desc: 'A standard medical color, professional and clean. Made with a blend of cotton and polyester for breathability. Available in all sizes.',
+                image_model: 'images/teal_model.jpg',
+                image_product: 'images/teal_product.jpg'
+            },
+            'plum': {
+                name: 'Elegant Scrub Set - Plum',
+                price: 12.99,
+                desc: 'Unique, comfortable, and highly distinctive color. Great for specialties looking for a softer tone. Lightweight and quick-drying.',
+                image_model: 'images/plum_model.jpg',
+                image_product: 'images/plum_product.jpg'
+            }
+        };
+
+        let currentProductColor = 'black'; 
+
+        function loadProductDetails() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const color = urlParams.get('color');
+            
+            const product = productData[color] || productData['black']; 
+            currentProductColor = color || 'black'; 
+
+            document.querySelector('title').textContent = product.name; 
+            document.querySelector('.product-info h1').textContent = product.name;
+            document.querySelector('.product-description').textContent = product.desc;
+            document.querySelector('.final-price').textContent = product.price.toFixed(2) + ' KWD'; 
+            document.querySelector('.main-model-image').src = product.image_model;
+            document.querySelector('.product-close-up-image').src = product.image_product;
+        }
+
+        loadProductDetails();
+    </script>
+
+    <script>
+        const sizeBtns = document.querySelectorAll('.size-btn');
+        let selectedSize = document.querySelector('.size-btn.active').textContent.split(' ')[0]; 
+        sizeBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                sizeBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                selectedSize = btn.textContent.split(' ')[0]; 
+            });
+        });
+        
+        const minusBtn = document.querySelector('.minus-btn');
+        const plusBtn = document.querySelector('.plus-btn');
+        const quantityInput = document.querySelector('.qty-input');
+
+        plusBtn.addEventListener('click', () => {
+            let currentValue = parseFloat(quantityInput.value);
+            quantityInput.value = currentValue + 1;
+        });
+
+        minusBtn.addEventListener('click', () => {
+            let currentValue = parseFloat(quantityInput.value);
+            if (currentValue > 1) {
+                quantityInput.value = currentValue - 1;
+            }
+        });
+        
+        document.getElementById('addToCartButton').addEventListener('click', () => {
+            const quantity = parseFloat(quantityInput.value);
+            
+            if (quantity < 1 || isNaN(quantity)) {
+                alert('Please select a valid quantity (1 or more).');
+                return;
+            }
+
+            const product = productData[currentProductColor];
+            
+            const item = {
+                id: currentProductColor + '-' + selectedSize, 
+                name: product.name,
+                price: product.price,
+                image: product.image_product,
+                color: currentProductColor,
+                size: selectedSize,
+                quantity: quantity
+            };
+
+            if (typeof addToCart === 'function') {
+                addToCart(item);
+                alert(`${item.quantity} x ${item.name} (${item.size}) added to cart!`);
+            } else {
+                alert('Error: Cart function not loaded. Please link cart.js.');
+            }
+        });
+        
+    </script>
+    
+    <script src="cart.js"></script> 
+
+</body>
+</html>

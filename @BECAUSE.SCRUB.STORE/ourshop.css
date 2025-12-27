@@ -1,0 +1,160 @@
+.shop-container {
+    padding: 60px 40px;
+    background-color: #f8f8f8;
+    text-align: center;
+}
+
+.shop-header {
+    margin-bottom: 40px;
+}
+
+.shop-header h1 {
+    color: #008080;
+    font-weight: 900;
+}
+
+.shop-header p {
+    color: #555;
+}
+
+.delivery-info {
+    background-color: #ffe0b2; 
+    color: #ff9800;
+    padding: 15px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.delivery-info h2 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+
+.product-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    
+    opacity: 0;           
+    visibility: hidden;   
+    height: 0;           
+    margin: 0;          
+    padding: 0;          
+    transition: all 0.5s ease; 
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.product-image {
+    width: 100%;
+    height: 350px; 
+    object-fit: cover;
+    transition: opacity 0.3s;
+}
+
+.hover-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+.product-card:hover .main-image {
+    opacity: 0;
+}
+
+.product-card:hover .hover-image {
+    opacity: 1;
+}
+
+
+.product-details {
+    padding: 15px;
+    text-align: left;
+}
+
+.product-details h3 {
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.product-details .description {
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 10px;
+    height: 36px; 
+}
+
+.product-details .price {
+    display: block;
+    color: rgba(255, 102, 0, 0.918); 
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900; 
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.add-to-cart-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #008080; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #006666;
+}
+.filter-bar {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.filter-btn {
+    background-color: #eee;
+    color: #555;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.filter-btn:hover {
+    background-color: #ddd;
+}
+
+.filter-btn.active {
+    background-color: #008080; 
+    color: white;
+    font-weight: 700;
+}
+
+.show-card {
+    opacity: 1 !important;        
+    visibility: visible !important; 
+    height: auto !important;      
+    margin: initial !important;   
+    padding: initial !important; 
+}

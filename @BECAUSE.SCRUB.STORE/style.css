@@ -1,0 +1,135 @@
+ body {
+     margin: 0;
+     font-family: 'Roboto', sans-serif;
+ }
+
+ .header {
+     background-color: #008080;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding: 10px 40px;
+ }
+
+ .logo {
+     width: 100px;
+ }
+
+ .btn {
+     background-color: rgba(255, 102, 0, 0.918);
+     border-radius: 15px;
+     padding: 5px 15px;
+     color: white;
+     border: none;
+ }
+
+ .btn:hover {
+     background-color: #f2858c;
+ }
+
+ .header-links a {
+     color: white;
+     padding: 5px 15px;
+     text-decoration: none;
+     border-radius: 15px;
+ }
+
+ .header-links a:hover {
+     background-color: #bbbbbb;
+ }
+
+ .landing-page {
+     background-color: #008080;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding: 20px 45px;
+     color: #ffffff;
+     border-radius: 0 0 50px 50px;
+ }
+
+ .landing-page-left-section {
+     width: 500px;
+ }
+
+ .landing-page-search input {
+     border-radius: 50px;
+     border: none;
+     outline: none;
+     height: 25px;
+     padding: 0 10px;
+ }
+
+ .landing-page-search button {
+     position: absolute;
+     left: 200px;
+     height: 25px;
+ }
+
+ .landing-page-img-container img {
+     border-radius: 20px;
+     width: 450px;
+     height: 350px;
+ }
+
+ .trending-container {
+     padding: 20px 45px;
+ }
+
+ .trending-container span {
+     color: #ee626b;
+     text-transform: uppercase;
+     font-size: 12px;
+ }
+
+ .Trending-Header {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+ }
+
+ .Trending-Header h1 {
+     margin-top: 0;
+ }
+
+ .Trending-Cards {
+     display: flex;
+     flex-wrap: wrap;
+     gap: 60px;
+     justify-content: center;
+ }
+
+ .card {
+     width: 220px;
+     background-color: #ffffff;
+     border-radius: 12px;
+     padding: 10px;
+     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+     display: flex;
+     flex-direction: column;
+     transition: transform 0.2s;
+ }
+
+ .card:hover {
+     transform: translateY(-20px);
+ }
+
+ .card img {
+     width: 100%;
+     height: auto;
+     /* keeps aspect ratio */
+     background-color: #EEEEEE;
+     border-radius: 20px;
+ }
+
+ .card-info {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     padding: 10px;
+ }
+
+ .card-info img {
+     width: 40px;
+     /* smaller check mark */
+ }
