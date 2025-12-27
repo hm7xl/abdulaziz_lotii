@@ -1,0 +1,81 @@
+
+.contact-container {
+    display: flex;
+    justify-content: center;
+    padding: 60px 40px;
+    background-color: #f8f8f8; 
+}
+
+.contact-box {
+    max-width: 900px;
+    width: 100%;
+    background-color: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.contact-box h1 {
+    color: #008080; 
+    font-weight: 900;
+    margin-bottom: 10px;
+}
+
+.contact-intro {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+.contact-methods {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.contact-card {
+    text-decoration: none;
+    color: inherit;
+    background-color: #ffffff;
+    border: 1px solid #eee;
+    padding: 20px;
+    border-radius: 10px;
+    flex: 1;
+    min-width: 200px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.contact-icon {
+    width: 60px; 
+    height: 60px; 
+    object-fit: contain; 
+    margin-bottom: 15px;
+}
+
+.contact-card h2 {
+    color: rgba(255, 102, 0, 0.918); 
+    margin: 5px 0;
+}
+
+.contact-card span {
+    font-weight: bold;
+    color: #008080;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.closing-note {
+    margin-top: 40px;
+    font-style: italic;
+    color: #777;
+}
